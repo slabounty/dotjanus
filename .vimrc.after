@@ -1,0 +1,12 @@
+colorscheme scott
+set guifont=monaco
+set lines=60 columns=140
+
+
+" ,f does fuzzy matching
+nmap <Leader>f :CtrlP<cr>
+
+" Use [w ]w to move between windows
+map [w <C-w><C-w>
+map ]w <C-w>W
+
