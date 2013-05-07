@@ -10,3 +10,9 @@ nmap <Leader>f :CtrlP<cr>
 map [w <C-w><C-w>
 map ]w <C-w>W
 
+set nowrapscan		" Don't wrap searches past the bottom of the screen
+
+" Clears search highlighting by just hitting a return. The <BS> clears the
+" command line. From Zdenek Sekera [zdenek.sekera@cern.ch] on the vim list.
+:nnoremap <CR> :noh<CR>/<BS>
+
