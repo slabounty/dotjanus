@@ -10,9 +10,18 @@ nmap <Leader>f :CtrlP<cr>
 map [w <C-w><C-w>
 map ]w <C-w>W
 
+" Use [t ]t to move between windows
+map [t :tabprevious<cr>
+map ]t :tabnext<cr>
+
+" Use ,av for alternate vertical split
+nmap <Leader>av :AV<cr>
+
 set nowrapscan		" Don't wrap searches past the bottom of the screen
 
 " Clears search highlighting by just hitting a return. The <BS> clears the
 " command line. From Zdenek Sekera [zdenek.sekera@cern.ch] on the vim list.
-:nnoremap <CR> :noh<CR>/<BS>
+nnoremap <CR> :noh<CR>/<BS>
 
+" Shows the cursor on the screen
+nnoremap <leader>p :PingCursor<cr>

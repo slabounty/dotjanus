@@ -1,0 +1,3 @@
+[submodule "vim-ping-cursor"]
+	path = vim-ping-cursor
+	url = git@github.com:cyphactor/vim-ping-cursor.git
