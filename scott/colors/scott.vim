@@ -27,7 +27,7 @@ hi IncSearch term=reverse cterm=reverse gui=reverse
 hi Search term=reverse ctermbg=3 guibg=Gold2
 hi MoreMsg term=bold ctermfg=2 gui=bold guifg=SeaGreen
 hi ModeMsg term=bold cterm=bold gui=bold
-hi LineNr term=underline ctermfg=3 guifg=Red3
+hi LineNr term=underline ctermfg=3 guifg=Gray70
 hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=Cornsilk guibg=Gray45
