@@ -1,5 +1,7 @@
 colorscheme scott
-set guifont=monaco
+" set guifont=monaco
+set guifont=Source_Code_Pro:h13
+
 set lines=60 columns=140
 
 
@@ -25,3 +27,18 @@ nnoremap <CR> :noh<CR>/<BS>
 
 " Shows the cursor on the screen
 nnoremap <leader>p :PingCursor<cr>
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" Send specs to tmux via slime
+let g:rspec_command = 'call Send_to_Tmux("zeus rspec --color {spec}\n")'
+
+" resize current buffer by +/- 5 
+nnoremap <D-left> :vertical resize -5<cr>
+nnoremap <D-down> :resize +5<cr>
+nnoremap <D-up> :resize -5<cr>
+nnoremap <D-right> :vertical resize +5<cr>
