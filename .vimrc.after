@@ -4,6 +4,9 @@ set guifont=Source_Code_Pro:h13
 
 set lines=60 columns=140
 
+" Janus sets these on ...
+set noignorecase
+set nosmartcase
 
 " ,f does fuzzy matching
 nmap <Leader>f :CtrlP<cr>
