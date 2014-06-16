@@ -9,7 +9,7 @@ set noignorecase
 set nosmartcase
 
 " ,f does fuzzy matching
-nmap <Leader>f :CtrlP<cr>
+nmap <Leader>f :CtrlPMixed<cr>
 
 " Use [w ]w to move between windows
 map [w <C-w><C-w>
@@ -45,3 +45,6 @@ nnoremap <D-left> :vertical resize -5<cr>
 nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
+
+" Set .god files to have ruby filetype
+au BufNewFile,BufRead *.god set filetype=ruby
