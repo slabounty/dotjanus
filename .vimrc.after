@@ -15,9 +15,11 @@ nmap <Leader>f :CtrlPMixed<cr>
 map [w <C-w><C-w>
 map ]w <C-w>W
 
-" Use [t ]t to move between windows
+" Use [t ]t to move between tabs and
+" ,tc to close
 map [t :tabprevious<cr>
 map ]t :tabnext<cr>
+map <Leader>tc :tabclose<cr>
 
 " Use ,av for alternate vertical split
 nmap <Leader>av :AV<cr>
