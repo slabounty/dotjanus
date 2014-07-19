@@ -1,6 +1,6 @@
 colorscheme scott
-" set guifont=monaco
-set guifont=Source_Code_Pro:h13
+set guifont=monaco
+" set guifont=Source_Code_Pro:h13
 
 set lines=60 columns=140
 
