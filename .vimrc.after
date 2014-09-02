@@ -1,6 +1,7 @@
 colorscheme scott
-" set guifont=monaco
-set guifont=Source_Code_Pro:h13
+"set guifont=monaco
+"set guifont=Source_Code_Pro:h13
+set guifont=Inconsolata:h15
 
 set lines=60 columns=140
 
@@ -20,6 +21,7 @@ map ]w <C-w>W
 map [t :tabprevious<cr>
 map ]t :tabnext<cr>
 map <Leader>tc :tabclose<cr>
+map <Leader>tn :tabnew<cr>
 
 " Use ,av for alternate vertical split
 nmap <Leader>av :AV<cr>
