@@ -50,5 +50,8 @@ nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
 
+" Rails logger ...
+nmap <leader>rl ORails.logger.error "\n\n\n#{self.class}##{__method__}\n\n\n"<Esc>
+
 " Set .god files to have ruby filetype
 au BufNewFile,BufRead *.god set filetype=ruby
