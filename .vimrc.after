@@ -1,6 +1,6 @@
 colorscheme scott
-" set guifont=monaco
-" set guifont=Source_Code_Pro:h13
+"set guifont=monaco
+"set guifont=Source_Code_Pro:h13
 set guifont=Inconsolata:h15
 
 set lines=60 columns=140
@@ -10,7 +10,7 @@ set noignorecase
 set nosmartcase
 
 " ,f does fuzzy matching
-nmap <Leader>f :CtrlP<cr>
+nmap <Leader>f :CtrlPMixed<cr>
 
 " Use [w ]w to move between windows
 map [w <C-w><C-w>
@@ -55,3 +55,9 @@ nnoremap <D-left> :vertical resize -5<cr>
 nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
+
+" Rails logger ...
+nmap <leader>rl ORails.logger.error "\n\n\n#{self.class}##{__method__}\n\n\n"<Esc>
+
+" Set .god files to have ruby filetype
+au BufNewFile,BufRead *.god set filetype=ruby
