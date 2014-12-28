@@ -1,6 +1,7 @@
 colorscheme scott
 " set guifont=monaco
-set guifont=Source_Code_Pro:h13
+" set guifont=Source_Code_Pro:h13
+set guifont=Inconsolata:h15
 
 set lines=60 columns=140
 
@@ -15,12 +16,21 @@ nmap <Leader>f :CtrlP<cr>
 map [w <C-w><C-w>
 map ]w <C-w>W
 
+" Create and close tabs
+map <Leader>tn :tabnew<CR>
+map <Leader>tc :tabclose<CR>
+
 " Use [t ]t to move between windows
 map [t :tabprevious<cr>
 map ]t :tabnext<cr>
 
 " Use ,av for alternate vertical split
 nmap <Leader>av :AV<cr>
+
+" Use ,bs for below right split (intentional
+" space at end of line.
+nmap <Leader>bs :belowright split 
+
 
 set nowrapscan		" Don't wrap searches past the bottom of the screen
 
