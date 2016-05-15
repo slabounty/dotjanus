@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -s  .janus/vimrc_before ~/.vimrc.before
+ln -s  .janus/vimrc_after ~/.vimrc.after
