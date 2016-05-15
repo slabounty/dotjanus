@@ -24,6 +24,10 @@ map <Leader>tc :tabclose<CR>
 map [t :tabprevious<cr>
 map ]t :tabnext<cr>
 
+" Use [[t ]]t to move tabs left/right
+map [[t :tabm -1<cr>
+map ]]t :tabm +1<cr>
+
 " Use ,av for alternate vertical split
 nmap <Leader>av :AV<cr>
 
@@ -31,6 +35,10 @@ nmap <Leader>av :AV<cr>
 " space at end of line.
 nmap <Leader>bs :belowright split 
 
+" Use ,fr for setting the filetype to ruby 
+" Useful for temp files.
+" space at end of line.
+nmap <Leader>fr :set ft=ruby<cr>
 
 set nowrapscan		" Don't wrap searches past the bottom of the screen
 
@@ -48,7 +56,8 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Send specs to tmux via slime
-let g:rspec_command = 'call Send_to_Tmux("zeus rspec --color {spec}\n")'
+"let g:rspec_command = 'call Send_to_Tmux("zeus rspec --color {spec}\n")'
+let g:rspec_runner = "os_x_terminal"
 
 " resize current buffer by +/- 5 
 nnoremap <D-left> :vertical resize -5<cr>
@@ -56,8 +65,15 @@ nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
 
+" Toggle relative line numbers
+nnoremap <silent><leader>rl :set rnu! rnu? <cr>
+
 " Rails logger ...
 nmap <leader>rl ORails.logger.error "\n\n\n#{self.class}##{__method__}\n\n\n"<Esc>
 
 " Set .god files to have ruby filetype
 au BufNewFile,BufRead *.god set filetype=ruby
+
+" Rubocop
+let g:vimrubocop_config = '~/.rubocop.yml'
+nmap <Leader>r :RuboCop<CR>
