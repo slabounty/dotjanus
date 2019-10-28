@@ -1,1 +1,9 @@
 let mapleader = ","
+
+call janus#disable_plugin('vim-gitgutter')"
+
+" Vim signify
+let g:signify_realtime = 1
+let g:signify_update_on_focusgained = 1
+let g:signify_cursorhold_normal = 1
+let g:signify_cursorhold_insert = 1

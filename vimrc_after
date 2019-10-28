@@ -1,13 +1,26 @@
-colorscheme scott
+"git gutter fix
+set shell=/usr/local/bin/zsh
+
+"colorscheme scott
+"colorscheme lucius
+"LuciusLight
+set background=light
+colorscheme PaperColor
+
 "set guifont=monaco
 "set guifont=Source_Code_Pro:h13
-set guifont=Inconsolata:h15
+"set guifont=InputMono:h15
+set guifont=Fira\ Code:h14
+"set guifont=Inconsolata:h15
 
 set lines=60 columns=140
 
 " Janus sets these on ...
 set noignorecase
 set nosmartcase
+
+" Set runtime path for fzf
+set rtp+=/usr/local/opt/fzf
 
 " ,f does fuzzy matching
 nmap <Leader>f :CtrlPMixed<cr>
@@ -35,7 +48,7 @@ nmap <Leader>av :AV<cr>
 " space at end of line.
 nmap <Leader>bs :belowright split 
 
-" Use ,fr for setting the filetype to ruby 
+" Use ,fr for setting the filetype to ruby
 " Useful for temp files.
 " space at end of line.
 nmap <Leader>fr :set ft=ruby<cr>
@@ -57,7 +70,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " Send specs to tmux via slime
 "let g:rspec_command = 'call Send_to_Tmux("zeus rspec --color {spec}\n")'
-let g:rspec_runner = "os_x_terminal"
+let g:rspec_command = "bundle exec rspec {spec}\n"
+let g:rspec_runner = "os_x_iterm2"
 
 " resize current buffer by +/- 5 
 nnoremap <D-left> :vertical resize -5<cr>
@@ -69,7 +83,7 @@ nnoremap <D-right> :vertical resize +5<cr>
 nnoremap <silent><leader>rl :set rnu! rnu? <cr>
 
 " Rails logger ...
-nmap <leader>rl ORails.logger.error "\n\n\n#{self.class}##{__method__}\n\n\n"<Esc>
+"nmap <leader>rl ORails.logger.error "\n\n\n#{self.class}##{__method__}\n\n\n"<Esc>
 
 " Set .god files to have ruby filetype
 au BufNewFile,BufRead *.god set filetype=ruby
@@ -77,3 +91,40 @@ au BufNewFile,BufRead *.god set filetype=ruby
 " Rubocop
 let g:vimrubocop_config = '~/.rubocop.yml'
 nmap <Leader>r :RuboCop<CR>
+
+" Match
+runtime macros/matchit.vim
+
+" Ag (remap for Ack)
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
+" Wildfire mappings
+" This selects the next closest text object.
+map <SPACE> <Plug>(wildfire-fuel)
+
+" This selects the previous closest text object.
+vmap <C-SPACE> <Plug>(wildfire-water)
+nmap <leader>s <Plug>(wildfire-quick-select)
+
+" Copy filename to clipboard
+nmap <Leader>cp :let @+ = expand("%")<cr>
+
+" alt commaands
+" Run a given vim command on the results of alt from a given path.
+" See usage below.
+function! AltCommand(path, vim_command)
+  let l:alternate = system("alt " . a:path)
+  if empty(l:alternate)
+    echo "No alternate file for " . a:path . " exists!"
+  else
+    exec a:vim_command . " " . l:alternate
+  endif
+endfunction
+
+" Find the alternate file for the current path and open it
+"nnoremap <leader>. :w<cr>:call AltCommand(expand('%'), ':e')<cr>
+nnoremap <leader>. :call AltCommand(expand('%'), ':vsplit')<cr>
